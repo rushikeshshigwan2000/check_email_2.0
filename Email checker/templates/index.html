@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="form-container">
+    <div class="form-section">
+        <h2>Enter a single email to validate</h2>
+        <form method="POST" action="/">
+            <input type="email" name="single_email" placeholder="example@domain.com" required>
+            <button type="submit" class="btn">Validate Email</button>
+        </form>
+    </div>
+
+    <div class="divider">
+        <span>OR</span>
+    </div>
+
+    <div class="form-section">
+        <h2>Upload your Excel file here</h2>
+        <form method="POST" action="/" enctype="multipart/form-data">
+            <div class="file-upload">
+                <input type="file" name="file" id="file" accept=".csv,.xlsx,.xls" required>
+                <label for="file" class="file-upload-label">
+                    <span class="file-upload-text">Drag and drop file here</span>
+                    <span class="file-upload-subtext">Limit 200MB per file - CSV, XLSX</span>
+                    <span class="file-upload-btn">Browse files</span>
+                </label>
+            </div>
+            <button type="submit" class="btn">Validate Emails</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
